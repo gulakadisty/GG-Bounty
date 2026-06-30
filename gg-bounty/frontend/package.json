@@ -1,0 +1,37 @@
+{
+    "name": "gg-bounty-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "npm run build:proto && tsc -b && vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext ts,tsx",
+        "build:proto": "pbjs -t static-module -w es6 -o src/proto/generated.js ../plugin/proto/*.proto && pbts -o src/proto/generated.d.ts src/proto/generated.js"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^6.26.0",
+        "long": "^5.2.3",
+        "protobufjs": "^7.5.4",
+        "@noble/curves": "^1.6.0",
+        "@noble/hashes": "^1.5.0",
+        "lucide-react": "^0.445.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.5",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react": "^4.3.1",
+        "protobufjs-cli": "^1.1.1",
+        "typescript": "^5.5.4",
+        "vite": "^5.4.2",
+        "eslint": "^8.57.0",
+        "@typescript-eslint/eslint-plugin": "^7.18.0",
+        "@typescript-eslint/parser": "^7.18.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
